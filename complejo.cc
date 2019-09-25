@@ -35,11 +35,15 @@ complejo::operator=(complejo const &c)
 complejo const &
 complejo::operator*=(complejo const &c)
 {
-	double re = re_ * c.re_
-	         - im_ * c.im_;
-	double im = re_ * c.im_
-	         + im_ * c.re_;
+	double re = re_ * c.re_ - im_ * c.im_;
+	double im = re_ * c.im_ + im_ * c.re_;
 	re_ = re, im_ = im;
+	return *this;
+}
+
+complejo const &
+complejo::operator/=(complejo const &c)
+{	// ToDo
 	return *this;
 }
 
@@ -58,6 +62,41 @@ complejo::operator-=(complejo const &c)
 	double re = re_ - c.re_;
 	double im = im_ - c.im_;
 	re_ = re, im_ = im;
+	return *this;
+}
+
+/** Sobrecarga para Reales */
+complejo const &
+complejo::operator*=(double const &a)
+{
+	double re = re_ * a;
+	double im = re_ * a;
+	re_ = re, im_ = im;
+	return *this;
+}
+
+complejo const &
+complejo::operator/=(double const &a)
+{
+	double re = re_ / a;
+	double im = re_ / a;
+	re_ = re, im_ = im;
+	return *this;
+}
+
+complejo const &
+complejo::operator+=(double const &a)
+{
+	double re = re_ + a_;
+	re_ = re;
+	return *this;
+}
+
+complejo const &
+complejo::operator-=(double const &a)
+{
+	double re = re_ - a_;
+	re_ = re;
 	return *this;
 }
 
