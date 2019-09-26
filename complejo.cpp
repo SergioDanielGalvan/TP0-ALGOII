@@ -43,7 +43,11 @@ complejo::operator*=(complejo const &c)
 
 complejo const &
 complejo::operator/=(complejo const &c)
-{	// ToDo
+{
+	double modulo = abs2( c );
+	double re = re_ * c.re_ + im_ * c.im_;
+	double im = re_ * c.im_ - im_ * c.re_;
+	re_ = re / modulo, im_ = im / modulo;
 	return *this;
 }
 

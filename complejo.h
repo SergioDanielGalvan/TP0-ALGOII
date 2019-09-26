@@ -12,12 +12,16 @@ public:
 	complejo(const complejo &);
 	complejo const &operator=(complejo const &);
 	complejo const &operator*=(complejo const &);
-	complejo const &operator+=(double const &);
-
-	// Falta agregar los prototipos de sobrecarga para complejo +/- real y viceversa
+	complejo const &operator/=(complejo const &);
 	complejo const &operator+=(complejo const &);
-
 	complejo const &operator-=(complejo const &);
+	// Prototipos de sobrecarga para complejo =/*/+/- real y viceversa
+	complejo const &operator=(double const &);
+	complejo const &operator*=(double const &);
+	complejo const &operator/=(double const &);
+	complejo const &operator+=(double const &);
+	complejo const &operator-=(double const &);
+
 	~complejo();
 
 	double re() const;
@@ -37,7 +41,7 @@ public:
 	friend bool operator==(complejo const &, double);
 	friend bool operator==(complejo const &, complejo const &);
 
-    // Falta agregar los prototipos de sobrecarga para float
+    // Falta agregar los prototipos de sobrecarga para double
 	friend std::ostream &operator<<(std::ostream &, const complejo &);
 	friend std::istream &operator>>(std::istream &, complejo &);
 };
