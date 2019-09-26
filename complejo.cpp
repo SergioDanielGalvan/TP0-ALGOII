@@ -1,6 +1,7 @@
-#include <complejo.h>
 #include <iostream>
 #include <cmath>
+
+#include "complejo.h"
 
 using namespace std;
 
@@ -44,7 +45,7 @@ complejo::operator*=(complejo const &c)
 complejo const &
 complejo::operator/=(complejo const &c)
 {
-	double modulo = abs2( c );
+	double modulo = c.abs2();
 	double re = re_ * c.re_ + im_ * c.im_;
 	double im = re_ * c.im_ - im_ * c.re_;
 	re_ = re / modulo, im_ = im / modulo;
