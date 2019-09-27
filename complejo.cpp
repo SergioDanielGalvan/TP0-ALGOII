@@ -92,7 +92,7 @@ complejo::operator/=(double const &a)
 complejo const &
 complejo::operator+=(double const &a)
 {
-	double re = re_ + a_;
+	double re = re_ + a;
 	re_ = re;
 	return *this;
 }
@@ -100,7 +100,7 @@ complejo::operator+=(double const &a)
 complejo const &
 complejo::operator-=(double const &a)
 {
-	double re = re_ - a_;
+	double re = re_ - a;
 	re_ = re;
 	return *this;
 }
@@ -157,7 +157,7 @@ operator+(complejo const &x, complejo const &y)
 {
 	complejo z(x.re_ + y.re_, x.im_ + y.im_);
 	return z;
-1}
+}
 
 complejo const
 operator-(complejo const &x, complejo const &y)
