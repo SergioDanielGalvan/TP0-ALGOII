@@ -1,5 +1,5 @@
-#include “Array.h”
-#include “complejo.h”
+#include "Array.h"
+#include "complejo.h"
 
 Array::Array()
 {
@@ -58,11 +58,15 @@ bool Array::operator==( const Array &rigth) const
 { 
 	if( size != rigth.size)
 		return false; 
-	else 
-		for( int i = 0; i < size; i++ )
-			if ( ptr[ i ] != rigth.ptr[ i ] )
-				return false;
-		return true;
+	else
+		{
+			for( int i = 0; i < size; i++ )
+				{
+					if ( ptr[ i ] != rigth.ptr[ i ] )
+						return false;
+				}
+		}
+	return true;
 }
 
 complejo& Array::operator[] ( int subscript )

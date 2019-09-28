@@ -4,7 +4,9 @@
 #include <iostream>
 
 class complejo {
+private:
 	double re_, im_;
+
 public:
 	complejo();
 	complejo(double);

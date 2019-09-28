@@ -1,7 +1,7 @@
+#include "complejo.h"
+
 #ifndef ARRAY_INCLUDED
 #define ARRAY_INCLUDED
-
-#include “complejo.h”
 
 class Array
 {
