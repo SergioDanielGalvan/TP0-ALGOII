@@ -52,6 +52,8 @@ Array& Array::operator=( const Array &rigth )
 				return *this; // al retornar una referencia permite x = y = z; 
 			} 
 		} 
+	else 
+		return *this;
 }
 
 bool Array::operator==( const Array &rigth) const

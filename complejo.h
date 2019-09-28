@@ -42,6 +42,8 @@ public:
 
 	friend bool operator==(complejo const &, double);
 	friend bool operator==(complejo const &, complejo const &);
+	friend bool operator!=(complejo const &, double);
+	friend bool operator!=(complejo const &, complejo const &);
 
     // Falta agregar los prototipos de sobrecarga para double
 	friend std::ostream &operator<<(std::ostream &, const complejo &);

@@ -196,7 +196,21 @@ operator==(complejo const &c, double f)
 bool
 operator==(complejo const &x, complejo const &y)
 {
-	bool b = (x.re_ != y.re_ || x.im_ != y.im_) ? false : true;
+	bool b = (x.re_ != y.re_ || x.im_ != y.im_) ? true : false;
+	return b;
+}
+
+bool
+operator!=(complejo const &c, double f)
+{
+	bool b = (c.im_ == 0 && c.re_ == f) ? false : true;
+	return b;
+}
+
+bool
+operator!=(complejo const &x, complejo const &y)
+{
+	bool b = (x.re_ == y.re_ && x.im_ == y.im_) ? false : true;
 	return b;
 }
 
