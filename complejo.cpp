@@ -1,12 +1,13 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 #include "complejo.h"
 
 using namespace std;
 
 complejo::complejo()
-	: re_(0), im_(0)    // Inicializadores de miembros.
+	: re_(0), im_(0), precision(2), ModoPrecision( indefinido )   // Inicializadores de miembros.
 {
 }
 
@@ -258,4 +259,30 @@ operator>>(istream &is, complejo &c)
 		is.clear(ios::badbit);
 
 	return is;
+}
+
+// http://www.cplusplus.com/reference/iomanip/setprecision/
+
+bool complejo::setprecision(int digitos)
+{
+	// Validaciones
+	if (digitos < 0) return false;
+
+	precision = digitos;
+	return true;
+}
+
+int complejo::getprecision() const
+{
+	return precision;
+}
+
+void complejo::setmodoprecision( TipoPrecision valor) 
+{
+	ModoPrecision = valor;
+}
+
+TipoPrecision complejo::getmodoprecision()  const
+{
+	return ModoPrecision;
 }

@@ -3,15 +3,23 @@
 
 #include <iostream>
 
+enum TipoPrecision {indefinido, fijo, cientifico};
+
 class complejo {
 private:
 	double re_, im_;
+	int precision;
+	TipoPrecision ModoPrecision;
 
 public:
 	complejo();
 	complejo(double);
 	complejo(double, double);
 	complejo(const complejo &);
+	bool setprecision( int );
+	int getprecision() const;
+	void setmodoprecision( TipoPrecision );
+	TipoPrecision getmodoprecision() const;
 	complejo const &operator=(complejo const &);
 	complejo const &operator*=(complejo const &);
 	complejo const &operator/=(complejo const &);
